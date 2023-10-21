@@ -17,7 +17,7 @@ local Section = Tab:AddSection({
 
 OrionLib:MakeNotification({
 	Name = "Kina Hub 1.0 Coming Soon!",
-	Content = "Notification content... what will it say??",
+	Content = "Kina Hub 1.0 Coming Soon!",
 	Image = "rbxassetid://4483345998",
 	Time = 5
 })
@@ -30,7 +30,7 @@ Tab:AddButton({
 })
 
 Tab:AddToggle({
-	Name = "This is a toggle!",
+	Name = "Testing",
 	Default = false,
 	Callback = function(Value)
 		print(Value)
