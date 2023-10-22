@@ -1,8 +1,11 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "KinaHub 1.0", HidePremium = false, SaveConfig = true, ConfigFolder = "kinahub"})
 
+
+
+
 local Tab = Window:MakeTab({
-	Name = "Tab 1",
+	Name = "Main Menu",
 
     
 	Icon = "rbxassetid://4483345998",
@@ -48,14 +51,30 @@ Tab:AddToggle({
 CoolToggle:Set(true)
 
 Tab:AddSlider({
-	Name = "Slider",
-	Min = 0,
+	Name = "+#+#!$",
+	Min = 16,
 	Max = 20,
 	Default = 5,
 	Color = Color3.fromRGB(255,255,255),
 	Increment = 1,
 	ValueName = "bananas",
 	Callback = function(Value)
+		print(Value)
+	end    
+})
+
+local OtherTab = Window:MakeTab({
+
+  OtherTab:AddSlider({
+	Name = "WalkSpeed",
+	Min = 16,
+	Max = 500,
+	Default = 16,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "ws",
+	Callback = function(Value)
+          game.Players.LocalPlayer.Humanoid.WalkSpeed = Value
 		print(Value)
 	end    
 })
