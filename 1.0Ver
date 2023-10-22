@@ -16,8 +16,8 @@ local Section = Tab:AddSection({
 })
 
 OrionLib:MakeNotification({
-	Name = "Title!",
-	Content = "Notification content... what will it say??",
+	Name = "System",
+	Content = "Hey Don't Forget To Join Our Discord Server!",
 	Image = "rbxassetid://4483345998",
 	Time = 5
 })
@@ -30,7 +30,15 @@ Tab:AddButton({
 })
 
 Tab:AddToggle({
-	Name = "Testing",
+	Name = "Farm Level",
+	Default = false,
+	Callback = function(Value)
+		print(Value)
+	end    
+})
+
+Tab:AddToggle({
+	Name = "Farm Bones",
 	Default = false,
 	Callback = function(Value)
 		print(Value)
