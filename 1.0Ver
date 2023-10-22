@@ -8,7 +8,7 @@ while _G.AutoKlik == true do
 game.GetService("ReplicatedStorage").Remotes.Tap:FireServer()
 wait(.00001)
 end
-end
+
 
 
 local PlayerTab = Window:MakeTab({
