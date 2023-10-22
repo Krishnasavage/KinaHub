@@ -26,7 +26,21 @@ local Section = PlayerTab:AddSection({
 	Name = "Section"
 })
 
+local NormalTab = Window:MakeTab({
 
+
+Name = "Normal",
+
+
+Icon = "rbxassetid://4483345998",
+
+
+PremiumOnly = false
+})
+
+local Section = NormalTab:AddSection({
+Name = "Normal"
+})
 
 OrionLib:MakeNotification({
 	Name = "System",
@@ -55,6 +69,8 @@ PlayerTab:AddToggle({
 	Name = "Farm Bones",
 	Default = false,
 	Callback = function(Value)
+_G.autoTap() = Value
+autoTap()
 		print(Value)
 	end    
 })
@@ -76,21 +92,7 @@ PlayerTab:AddSlider({
 
 Slider:Set(2)
 
-local NormalTab = Window:MakeTab({
 
-
-Name = "Normal",
-
-
-Icon = "rbxassetid://4483345998",
-
-
-PremiumOnly = false
-})
-
-local Section = NormalTab:AddSection({
-Name = "Normal"
-})
 
   NormalTab:AddSlider({
 	Name = "WalkSpeed",
