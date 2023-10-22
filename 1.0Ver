@@ -71,6 +71,7 @@ PremiumOnly = false
 
 local Section = OtherTab:AddSection{(
 Name = "Slide"
+})
 
   OtherTab:AddSlider({
 	Name = "WalkSpeed",
