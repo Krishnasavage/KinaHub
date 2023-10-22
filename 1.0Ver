@@ -51,8 +51,8 @@ Tab:AddToggle({
 CoolToggle:Set(true)
 
 Tab:AddSlider({
-	Name = "+#+#!$",
-	Min = 16,
+	Name = "Slider",
+	Min = 0,
 	Max = 20,
 	Default = 5,
 	Color = Color3.fromRGB(255,255,255),
@@ -64,6 +64,10 @@ Tab:AddSlider({
 })
 
 local OtherTab = Window:MakeTab({
+Name = "Slide Menu",
+Icon = "rbxassetid://4483345998",
+PremiumOnly = false
+})
 
   OtherTab:AddSlider({
 	Name = "WalkSpeed",
