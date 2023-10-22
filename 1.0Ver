@@ -18,6 +18,22 @@ local Section = Tab:AddSection({
 	Name = "Section"
 })
 
+local OtherTab = Window:MakeTab({
+
+
+Name = "Slide Menu",
+
+
+Icon = "rbxassetid://4483345998",
+
+
+PremiumOnly = false
+})
+
+local Section = OtherTab:AddSection({
+Name = "Slide"
+})
+
 OrionLib:MakeNotification({
 	Name = "System",
 	Content = "Hey Don't Forget To Join Our Discord Server!",
@@ -63,15 +79,6 @@ Tab:AddSlider({
 	end    
 })
 
-local OtherTab = Window:MakeTab({
-Name = "Slide Menu",
-Icon = "rbxassetid://4483345998",
-PremiumOnly = false
-})
-
-local Section = OtherTab:AddSection({
-Name = "Slide"
-})
 
   OtherTab:AddSlider({
 	Name = "WalkSpeed",
