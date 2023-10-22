@@ -97,6 +97,7 @@ Slider:Set(2)
 OtherTab:AddButton({
 	Name = "Break The Doors",
 	Callback = function()
+         game.Players.LocalPlayer.character.Humanoid.WalkSpeed = 500
 
       		print("button pressed")
 
