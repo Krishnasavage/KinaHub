@@ -44,8 +44,8 @@ OrionLib:MakeNotification({
 function AutoKlik()
 while _G.AutoKlik == true do
 game.GetService("ReplicatedStorage").Remotes.Tap:FireServer()
-end
 wait(.00001)
+end
 PlayerTab:AddButton({
 	Name = "Summon Seabeast",
 	Callback = function()
