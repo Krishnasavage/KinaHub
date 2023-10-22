@@ -1,7 +1,7 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "KinaHub 1.0", HidePremium = false, SaveConfig = true, ConfigFolder = "kinahub"})
 
-
+_G.AutoKlik() = true
 
 
 local PlayerTab = Window:MakeTab({
@@ -18,10 +18,10 @@ local Section = PlayerTab:AddSection({
 	Name = "Section"
 })
 
-local OtherTab = Window:MakeTab({
+local ClikerTab = Window:MakeTab({
 
 
-Name = "Slide Menu",
+Name = "Cliker",
 
 
 Icon = "rbxassetid://4483345998",
@@ -30,8 +30,8 @@ Icon = "rbxassetid://4483345998",
 PremiumOnly = false
 })
 
-local Section = OtherTab:AddSection({
-Name = "Slide"
+local Section = ClikerTab:AddSection({
+Name = "Cliker"
 })
 
 OrionLib:MakeNotification({
@@ -41,6 +41,10 @@ OrionLib:MakeNotification({
 	Time = 5
 })
 
+function AutoKlik()
+while _G.AutoKlik == true do
+game.GetService("ReplicatedStorage").Remotes.Tap:FireServer()
+end
 PlayerTab:AddButton({
 	Name = "Summon Seabeast",
 	Callback = function()
@@ -81,7 +85,7 @@ PlayerTab:AddSlider({
 
 Slider:Set(2)
 
-  OtherTab:AddSlider({
+  ClikerTab:AddSlider({
 	Name = "WalkSpeed",
 	Min = 16,
 	Max = 500,
@@ -94,7 +98,7 @@ Slider:Set(2)
 	end    
 })
 
-OtherTab:AddButton({
+ClikerTab:AddButton({
 	Name = "Break The Doors",
 	Callback = function()
          game.Players.LocalPlayer.character.Humanoid.WalkSpeed = 500
@@ -105,11 +109,12 @@ OtherTab:AddButton({
 })
 
 
-OtherTab:AddToggle({
+ClikerTab:AddToggle({
 	Name = "Auto Hatch",
 	Default = false,
 	Callback = function(Value)
-		print(Value)
+		_G.AutoKlik -- Value
+                AutoKlik()
 	end    
 })
 OrionLib:Init()
