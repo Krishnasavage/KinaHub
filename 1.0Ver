@@ -82,7 +82,7 @@ Name = "Slide"
 	Increment = 1,
 	ValueName = "ws",
 	Callback = function(Value)
-          game.Players.LocalPlayer.Humanoid.WalkSpeed = Value
+          game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
 	end    
 })
 OrionLib:Init()
