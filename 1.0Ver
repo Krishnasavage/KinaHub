@@ -69,7 +69,7 @@ PlayerTab:AddToggle({
 	Name = "Farm Bones",
 	Default = false,
 	Callback = function(Value)
-_G.autoTap() = Value
+_G.autoTap = Value
 autoTap()
 		print(Value)
 	end    
