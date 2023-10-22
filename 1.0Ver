@@ -91,6 +91,7 @@ OtherTab:AddButton({
 	Callback = function()
 
       		print("button pressed")
+
+  	end  
 })
-  	end    
 OrionLib:Init()
