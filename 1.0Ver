@@ -85,4 +85,11 @@ Name = "Slide"
           game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
 	end    
 })
+
+Tab:AddButton({
+	Name = "Break The Doors",
+	Callback = function()
+
+      		print("button pressed")
+  	end    
 OrionLib:Init()
