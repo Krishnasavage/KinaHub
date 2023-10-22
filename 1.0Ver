@@ -79,6 +79,7 @@ PlayerTab:AddSlider({
 	end    
 })
 
+Slider:Set(2)
 
   OtherTab:AddSlider({
 	Name = "WalkSpeed",
