@@ -3,6 +3,13 @@ local Window = OrionLib:MakeWindow({Name = "KinaHub 1.0", HidePremium = false, S
 
 _G.AutoKlik() = true
 
+function AutoKlik()
+while _G.AutoKlik == true do
+game.GetService("ReplicatedStorage").Remotes.Tap:FireServer()
+wait(.00001)
+end
+end
+
 
 local PlayerTab = Window:MakeTab({
 	Name = "Main Menu",
@@ -41,11 +48,7 @@ OrionLib:MakeNotification({
 	Time = 5
 })
 
-function AutoKlik()
-while _G.AutoKlik == true do
-game.GetService("ReplicatedStorage").Remotes.Tap:FireServer()
-wait(.00001)
-end
+
 PlayerTab:AddButton({
 	Name = "Summon Seabeast",
 	Callback = function()
