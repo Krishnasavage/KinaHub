@@ -6,7 +6,7 @@ _G.autoTap = true
 function autoTap()
 while _G.autoTap == true do
 game.GetService("ReplicatedStorage").Remotes.Tap:FireServer()
-wait(00001)
+wait("00001")
 end
 end
 
