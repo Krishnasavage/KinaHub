@@ -103,4 +103,13 @@ OtherTab:AddButton({
 
   	end  
 })
+
+
+OtherTab:AddToggle({
+	Name = "Auto Hatch",
+	Default = false,
+	Callback = function(Value)
+		print(Value)
+	end    
+})
 OrionLib:Init()
