@@ -80,13 +80,13 @@ Name = "Slide"
 	Default = 16,
 	Color = Color3.fromRGB(255,255,255),
 	Increment = 1,
-	ValueName = "ws",
+	ValueName = "WS",
 	Callback = function(Value)
           game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
 	end    
 })
 
-Tab:AddButton({
+OtherTab:AddButton({
 	Name = "Break The Doors",
 	Callback = function()
 
