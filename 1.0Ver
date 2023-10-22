@@ -83,8 +83,6 @@ Name = "Slide"
 	ValueName = "ws",
 	Callback = function(Value)
           game.Players.LocalPlayer.Humanoid.WalkSpeed = Value
-		print(Value)
 	end    
 })
 
-OrionLib:Init()
