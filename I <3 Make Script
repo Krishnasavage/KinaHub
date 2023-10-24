@@ -1,0 +1,32 @@
+  local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+  local Window = Rayfield:CreateWindow({
+     Name = "KinaHub Testing Ver",
+     LoadingTitle = "KinaHub 2.0",
+     LoadingSubtitle = "© KinaTeamProduction",
+     ConfigurationSaving = {
+        Enabled = false,-- jngan diidupin rawan erorr
+        FolderName = nil, -- Create a custom folder for your hub/game
+        FileName = "KinaKekKontol"
+     },
+     Discord = {
+        Enabled = false,
+        Invite = "https://discord.com/invite/j5x5xRk6", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+        RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+     },
+     KeySystem = true, -- Set this to true to use our key system
+     KeySettings = {
+        Title = "KinaHub | Key System",
+        Subtitle = "Key System",
+        Note = "Get Key From My Site ",
+        FileName = "KinaHubKey", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+        SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+        GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+        Key = {"https://pastebin.com/raw/QzmJ51A0"} -- List of keys that will be aepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+
+     }
+  })
+
+  Rayfield:Destroy()
+
+  local KinaLib = loadstring(game:HttpGet('https://pastebin.com/raw/zXKvMmgE'))();
