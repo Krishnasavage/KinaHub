@@ -28,8 +28,9 @@
   })
 
   Rayfield:Destroy()
-if game.PlaceId == 8750997647 then
+if game.PlaceId==8750997647 then
 
   local KinaLib = loadstring(game:HttpGet('https://pastebin.com/raw/zXKvMmgE'))();
-if game.PlaceId == 13772394625 then
+elseif game.PlaceId==13772394625 then
 local KinaLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/Krishnasavage/KinaHub/main/1.0Ver'))();
+end
