@@ -31,4 +31,5 @@
 if game.PlaceId == 8750997647 then
 
   local KinaLib = loadstring(game:HttpGet('https://pastebin.com/raw/zXKvMmgE'))();
-else
+if game.PlaceId == 13772394625 then
+local KinaLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/Krishnasavage/KinaHub/main/1.0Ver'))();
