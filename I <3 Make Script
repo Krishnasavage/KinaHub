@@ -28,5 +28,6 @@
   })
 
   Rayfield:Destroy()
+if game.PlaceId == then
 
   local KinaLib = loadstring(game:HttpGet('https://pastebin.com/raw/zXKvMmgE'))();
