@@ -33,4 +33,6 @@ if game.PlaceId==8750997647 then
   local KinaLib = loadstring(game:HttpGet('https://pastebin.com/raw/zXKvMmgE'))();
 elseif game.PlaceId==13772394625 then
 local KinaLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/Krishnasavage/KinaHub/main/1.0Ver'))();
+elseif game.PlaceId==4483381587 then
+local marulib = loadstring(game:HttpGet("https://raw.githubusercontent.com/xshiba/CreamSoScute/main/LoadKL.lua",true))()
 end
