@@ -116,19 +116,18 @@ end;
 MainTab : AddButton({
     Name = "Auto Parry #2",
     Callback = function()
-			shared.config = {
-   adjustment = 3.7, -- // Keep this between 3 to 4 \\ --
-   hit_range = 0.5, -- // You can mess around with this \\ --
-
-   mode = 'Hold', -- // Hold , Toggle , Always \\ --
-   deflect_type = 'Remote', -- // Key Press , Remote \\ --
-   notifications = true,
-   keybind = Enum.KeyCode.Z	
-}
-
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/cunning-sys/meowmeowscripts/main/bladeball.lua'),true))()
-		end
-	})
+			getgenv().god = true
+while getgenv().god and task.wait() do
+    for _,ball in next, workspace.Balls:GetChildren() do
+        if ball then
+            if game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+							if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Highlight") then
+								game:GetService("ReplicatedStorage").Remotes.ParryButtonPress:Fire()
+                end
+            end
+					end
+end
+})
 
 MainTab : AddButton({
     Name = "RAGE MODE AUTO PARRY (RISK)",
