@@ -123,12 +123,7 @@ MainTab : AddButton({
    mode = 'Hold', -- // Hold , Toggle , Always \\ --
    deflect_type = 'Remote', -- // Key Press , Remote \\ --
    notifications = true,
-   keybind = Enum.KeyCode.E
-				game:GetService("StarterGui"):SetCore("SendNotification",{
-                Title = "Blade Ball",
-                Text = 'Starting Auto Parry#2',
-            })
-			end
+   keybind = Enum.KeyCode.Z	
 }
 
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/cunning-sys/meowmeowscripts/main/bladeball.lua'),true))()
