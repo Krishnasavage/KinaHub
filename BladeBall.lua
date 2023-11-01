@@ -84,7 +84,7 @@ while task.wait() do
 					local ServerPing = StatsService.Network.ServerStatsItem["Data Ping"]:GetValue();
 					local DistanceToPlayer = (Player.Character.HumanoidRootPart.Position-OtherBall.Position).Magnitude;
 					local EstimatedTimeToReachPlayer = (ServerPing/VelocityMagnitude)/(ServerPing/DistanceToPlayer);
-					local TimeToParry = 0.1*(VelocityMagnitude/DistanceToPlayer);
+					local TimeToParry = 0.3*(VelocityMagnitude/DistanceToPlayer);
 
 					print(EstimatedTimeToReachPlayer, "<=", TimeToParry);
 
