@@ -43,7 +43,7 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
-	Name = "Hold Block To Spam CREDITS: HOSVILLE",
+	Name = "Hold Block To Spam",
 	Callback = function()
 	getgenv().SpamSpeed = 9
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Spam",true))()
@@ -53,13 +53,12 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/ma
 	
 	
 
-Tab:AddToggle({
+Tab:AddButton({
 	Name = "Auto Parry",
-	Default = false,
-	Callback = function(Value)
+	Callback = function()
       local kinahub =
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry",true))()
-		print(Value)
+		
 	end 
 	})
 	
@@ -67,8 +66,7 @@ Tab:AddToggle({
 	Name = "Auto Clash OUTDATED",
 	Default = false,
 	Callback = function(Value)
-	loadstring(game:HttpGet("https://pastebin.com/raw/t2391h1A"))()
-		print(Value)
+	loadstring(game:HttpGet("https://pastebin.com/raw/t2391h1A"))();
 	end 
 	})
 	OrionLib:Init()
