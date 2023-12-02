@@ -56,7 +56,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/ma
 Tab:AddButton({
 	Name = "Auto Parry",
 	Callback = function()
-      local kinahub =
+
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry",true))()
 		
 	end 
@@ -65,15 +65,15 @@ Tab:AddButton({
 Tab:AddButton({
 	Name = "Aim Mechanical",
 	Callback = function()
-			local mekanik =
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/M%3ABlade%20Ball%20Mechanism",true))()
+			
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/M%3ABlade%20Ball%20Mechanism"))()
 		end
 })
 
 Tab:AddButton({
 	Name = "Auto Detect BETA TEST",
 	Callback = function()
-			local decect =
+		
 loadstring(game:HttpGet('https://pastebin.com/raw/HPNBFGSf'))()
 
 		end
