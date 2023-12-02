@@ -65,6 +65,7 @@ Tab:AddButton({
 Tab:AddButton({
 	Name = "Aim Mechanical",
 	Callback = function()
+			local mekanik =
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/M%3ABlade%20Ball%20Mechanism",true))()
 		end
 })
@@ -72,7 +73,8 @@ Tab:AddButton({
 Tab:AddButton({
 	Name = "Auto Detect BETA TEST",
 	Callback = function()
-loadstring(game:HttpGet(('https://pastebin.com/raw/HPNBFGSf')
+			local decect =
+loadstring(game:HttpGet('https://pastebin.com/raw/HPNBFGSf'))()
 
 		end
 })
