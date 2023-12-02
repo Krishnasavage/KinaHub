@@ -61,6 +61,21 @@ Tab:AddButton({
 		
 	end 
 	})
+
+Tab:AddButton({
+	Name = "Aim Mechanical",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/M%3ABlade%20Ball%20Mechanism",true))()
+		end
+})
+
+Tab:AddButton({
+	Name = "Auto Detect BETA TEST",
+	Callback = function()
+loadstring(game:HttpGet(('https://pastebin.com/raw/HPNBFGSf')
+
+		end
+})
 	
 	Tab:AddToggle({
 	Name = "Auto Clash OUTDATED",
