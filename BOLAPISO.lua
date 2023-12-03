@@ -43,6 +43,14 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
+	Name = "Auto Spam V4",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/DonGabrielle/AutoDetectV4/main/MainBalls"))()
+  	end    
+})
+
+
+Tab:AddButton({
 	Name = "Hold Block To Spam",
 	Callback = function()
 	getgenv().SpamSpeed = 9
