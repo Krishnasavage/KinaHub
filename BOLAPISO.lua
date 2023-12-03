@@ -82,8 +82,7 @@ Tab:AddButton({
 	Name = "Auto Detect BETA TEST",
 	Callback = function()
 		
-loadstring(game:HttpGet('https://pastebin.com/raw/HPNBFGSf'))()
-
+loadstring(game:HttpGet("https://pastebin.com/raw/pjTTegEe"))()
 		end
 })
 	
