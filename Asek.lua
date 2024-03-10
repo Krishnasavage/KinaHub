@@ -1,134 +1,52 @@
 
-game.StarterGui:SetCore("SendNotification", {
-Title = "XuaZ Hub";
-Text = "Farm Chest Activating";
-Icon = "http://www.roblox.com/asset/?id=16665265313";
-Duration = "7";
-})
-getgenv().Server_Hop = true
-getgenv().Chest_Farm = true
-getgenv().wait_Time = 35 -- Seconds
+local DiscordLib =
+    loadstring(game:HttpGet "https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/discord")()
 
-local placeId = game.PlaceId
-if placeId == 2753915549 or placeId == 4442272183 or placeId == 7449423635 then
-repeat wait() until game:IsLoaded() ~= false
+local win = DiscordLib:Window("XuaZ Hub")
 
+local serv = win:Server("XuaZ Hub", "")
 
-local Counter = 0
-local PlaceID = game.PlaceId
-     local AllIDs = {}
-     local foundAnything = ""
-     local actualHour = os.date("!*t").hour
-     local Deleted = false
+local btns = serv:Channel("Main")
 
-     local File = pcall(function()
-         AllIDs = game:GetService('HttpService'):JSONDecode(readfile("NotSameServers.json"))
-     end)
-     if not File then
-         table.insert(AllIDs, actualHour)
-         writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
-     end
-    
-     function TPReturner()
-         local Site;
-         if foundAnything == "" then
-             Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'))
-         else
-             Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100&cursor=' .. foundAnything))
-         end
-         local ID = ""
-         if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
-             foundAnything = Site.nextPageCursor
-         end
-         local num = 0;
-         for i,v in pairs(Site.data) do
-             local Possible = true
-             ID = tostring(v.id)
-             if tonumber(v.maxPlayers) > tonumber(v.playing) then
-                 for _,Existing in pairs(AllIDs) do
-                     if num ~= 0 then
-                         if ID == tostring(Existing) then
-                             Possible = false
-                         end
-                     else
-                         if tonumber(actualHour) ~= tonumber(Existing) then
-                             local delFile = pcall(function()
-                                delfile("NotSameServers.json")
-                                 AllIDs = {}
-                                 table.insert(AllIDs, actualHour)
-                             end)
-                         end
-                     end
-                     num = num + 1
-                 end
-                 if Possible == true then
-                     table.insert(AllIDs, ID)
-                     wait()
-                     pcall(function()
-                         writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
-                         wait()
-                         game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game.Players.LocalPlayer)
-                     end)
-                     wait(4)
-                 end
-             end
-         end
-     end
- 
-     function Teleport()
-        while wait() do
-            pcall(function()
-                 TPReturner()
-                 if foundAnything ~= "" then
-                     TPReturner()
-                 end
-            end)
-        end
-     end
-
-     spawn(function()
-        local ohString1 = "SetTeam"
-        local ohString2 = "Marines"
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(ohString1, ohString2)
-     end)
-
-
-spawn(function()
-   while wait(.8) do
-      if Chest_Farm then
-          pcall(function()
-  
-  for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
-      if string.find(v.Name, "Chest") then
-          print(v.Name)
-          game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
-          wait(.15)
-      end
-  end
-  game.Players.LocalPlayer.Character.Head:Destroy()
-  for _,v in pairs(game:GetService("Workspace"):GetDescendants()) do
-   if string.find(v.Name, "Chest") and v:IsA("TouchTransmitter") then
-   firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 0) --0 is touch
-   wait()
-   firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Parent, 1) -- 1 is untouch
-   end
-   end
-  end)
-      end
-  end
-end)
-
-spawn(function()
-    while wait() do
-        if Server_Hop then
-            pcall(function()
-                        wait(wait_Time)
-                        Teleport()
-                        print("Finding new server")
-            end)
+btns:Button(
+    "Auto Parry",
+    function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry",true))()
+        DiscordLib:Notification("Notification", "Auto Parry!", "Okay!")
+    end
+)
+btns:Button(
+    "Auto Parry V3",
+    function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry%20V3.0.0"))()
+        DiscordLib:Notification("Notification", "Auto Parry!", "Okay!")
+    end
+)
+btns:Button(
+    "Auto Parry [RAGE MODE]",
+    function()
+   getgenv().god = true
+while getgenv().god and task.wait() do
+    for _,ball in next, workspace.Balls:GetChildren() do
+        if ball then
+            if game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+                game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position, ball.Position)
+                if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Highlight") then
+                    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = ball.CFrame * CFrame.new(0, 0, (ball.Velocity).Magnitude * -0.5)
+                    game:GetService("ReplicatedStorage").Remotes.ParryButtonPress:Fire()
+                end
+            end
         end
     end
-end)
-
-
-end
+      end
+    end
+)
+btns:Button(
+    "Hold Block To Spam",
+    function()
+   getgenv().SpamSpeed = 1
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Spam",true))()
+        DiscordLib:Notification("Notification", "Auto Parry!", "Okay!")
+    end
+)
+win:Server("Main", "http://www.roblox.com/asset/?id=6031075938")
