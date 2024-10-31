@@ -158,7 +158,7 @@ toggleButton.MouseButton1Click:Connect(function()
         -- Character reset coroutine
         resetCoroutine = coroutine.create(function()
             while autoChestEnabled do
-                wait(5)  -- Shorter reset interval for efficiency
+                wait(10)  -- Shorter reset interval for efficiency
                 if not getgenv().FistOfDarkness and not getgenv().GodChalice then
                     local player = game.Players.LocalPlayer
                     player.Character:BreakJoints()
