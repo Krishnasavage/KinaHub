@@ -125,7 +125,7 @@ toggleButton.MouseButton1Click:Connect(function()
 
             local function checkForItems()
                 for _, item in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-                    if item.Name == "Fist of darkness" then
+                    if item.Name == "Fist of Darkness" then
                         getgenv().FistOfDarkness = true
                         print("Fist of Darkness found! Stopping chest farm.")
                         getgenv().AutoChest = false
