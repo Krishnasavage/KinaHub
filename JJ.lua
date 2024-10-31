@@ -130,7 +130,7 @@ toggleButton.MouseButton1Click:Connect(function()
                         print("Fist of Darkness found! Stopping chest farm.")
                         getgenv().AutoChest = false
                         break
-                    elseif item.Name == "God's chalice" then
+                    elseif item.Name == "God’s chalice" then
                         getgenv().GodChalice = true
                         print("God Chalice found! Stopping chest farm.")
                         getgenv().AutoChest = false
