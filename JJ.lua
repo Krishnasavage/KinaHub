@@ -191,11 +191,11 @@ toggleButton.MouseButton1Click:Connect(function()
 
         -- Character reset coroutine
         resetCoroutine = coroutine.create(function()
-            local resetCountdown = 5
+            local resetCountdown = 8
             while true do
                 wait(1)
                 if not autoChestEnabled or getgenv().FistOfDarkness or getgenv().GodChalice then
-                    resetCountdown = 5
+                    resetCountdown = 8
                 else
                     resetCountdown = resetCountdown - 1
                 end
@@ -206,7 +206,7 @@ toggleButton.MouseButton1Click:Connect(function()
                     pcall(function()
                         player.Character:BreakJoints()
                     end)
-                    resetCountdown = 5
+                    resetCountdown = 8
                 end
             end
         end)
