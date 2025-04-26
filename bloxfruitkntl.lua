@@ -30,7 +30,7 @@ Changelog:addChangelog('')
 Changelog:addChangelog('[April, 26 2025]')
 Changelog:addChangelog('= balancing auto find fruit (not risky)')
 Changelog:addChangelog('- Kill Aura Raid')
-Changelog:addChangelog('+ fixing my brain')
+Changelog:addChangelog('+ Dev Krizz Ganteng')
 Changelog:addChangelog('')
 local Home_Right = Tab.Tab_1:addSection() -- HOME RIGHT SECTION
 local Main_Home = Home_Right:addMenu("#Home")
@@ -1435,7 +1435,7 @@ end)
 spawn(function()
     while task.wait() do
         pcall(function()
-            if EventLocation or DragonTalonUpgrade or TreeDestroyFarm or TeleportPrehistoric or PurpleBeltF or WhiteBeltF or BlazeEmberFarm or AttackFish or AttackTerrorshark or AttackGhostship or AutoSeabeastFarm or AutoSeaFarm or DojoClaimQuest or DojoRequestQuest or DojoQuestEnable or AutoSTartRaids or TeleporttoFruitDealer or _G.TeleportFruit or TeleporttoKitsune or CollectAzureAmber or AutoTrain or AutoKillHuman or AutoPirateCastle or TweenToPlayer or AutoSail or AutoFarmTerrorShark or AutoFarmFish or AutoFarmSeaBeast or AutoFarmGhostBoats or LevelFarmNoQuest or LevelFarmQuest or Farm_Bone or Farm_Ectoplasm or Nearest_Farm or SelectMonster_Quest_Farm or SelectMonster_NoQuest_Farm or Auto_Farm_Material or AutoFarmBossNoQuest or AutoFarmBossQuest or GunMastery_Farm or DevilMastery_Farm or AutoKenV2 or AutoFarmKen or AutoNextIsland or BossRaid or _G.Teleport_to_Player or _G.Clip or _G.Auto_Kill_Player_Melee or _G.Auto_Kill_Player_Gun or TeleporttoMirage or TeleporttoGear or _G.Auto_Teleport_Fruit or AutoSecondWorld or AutoThirdWorld or AutoDeathStep or AutoSuperhuman or AutoSharkman or AutoElectricClaw or AutoDragonTalon or AutoGodhuman or AutoSaber or AutoRengoku or AutoBuddySword or AutoPole or AutoYama or AutoCavander or AutoTushita or Auto_Cursed_Dual_Katana or Auto_Quest_Yama_1 or Auto_Quest_Yama_2 or Auto_Quest_Yama_3 or Auto_Quest_Tushita_1 or Auto_Quest_Tushita_2 or Auto_Quest_Tushita_3 or AutoEliteHunter or AutoCakePrince or _G.AutoDoughKing or AutoDarkDagger or AutoHallowSycthe or AutoCitizen or AutoEvoRace or AutoBartilo or AutoFactory or _G.SwanGlasses or RipIndra or AutoRainbowHaki or AutoTorch or AutoSoulGuitar or AutoTryLuck or AutoPray or AutoAdvanceDungeon or AutoMusketeer or Auto_Serpent_Bow then
+             DragonTalonUpgrade or TreeDestroyFarm or TeleportPrehistoric or PurpleBeltF or WhiteBeltF or BlazeEmberFarm or AttackFish or AttackTerrorshark or AttackGhostship or AutoSeabeastFarm or AutoSeaFarm or DojoClaimQuest or DojoRequestQuest or DojoQuestEnable or AutoSTartRaids or TeleporttoFruitDealer or _G.TeleportFruit or TeleporttoKitsune or CollectAzureAmber or AutoTrain or AutoKillHuman or AutoPirateCastle or TweenToPlayer or AutoSail or AutoFarmTerrorShark or AutoFarmFish or AutoFarmSeaBeast or AutoFarmGhostBoats or LevelFarmNoQuest or LevelFarmQuest or Farm_Bone or Farm_Ectoplasm or Nearest_Farm or SelectMonster_Quest_Farm or SelectMonster_NoQuest_Farm or Auto_Farm_Material or AutoFarmBossNoQuest or AutoFarmBossQuest or GunMastery_Farm or DevilMastery_Farm or AutoKenV2 or AutoFarmKen or AutoNextIsland or BossRaid or _G.Teleport_to_Player or _G.Clip or _G.Auto_Kill_Player_Melee or _G.Auto_Kill_Player_Gun or TeleporttoMirage or TeleporttoGear or _G.Auto_Teleport_Fruit or AutoSecondWorld or AutoThirdWorld or AutoDeathStep or AutoSuperhuman or AutoSharkman or AutoElectricClaw or AutoDragonTalon or AutoGodhuman or AutoSaber or AutoRengoku or AutoBuddySword or AutoPole or AutoYama or AutoCavander or AutoTushita or Auto_Cursed_Dual_Katana or Auto_Quest_Yama_1 or Auto_Quest_Yama_2 or Auto_Quest_Yama_3 or Auto_Quest_Tushita_1 or Auto_Quest_Tushita_2 or Auto_Quest_Tushita_3 or AutoEliteHunter or AutoCakePrince or _G.AutoDoughKing or AutoDarkDagger or AutoHallowSycthe or AutoCitizen or AutoEvoRace or AutoBartilo or AutoFactory or _G.SwanGlasses or RipIndra or AutoRainbowHaki or AutoTorch or AutoSoulGuitar or AutoTryLuck or AutoPray or AutoAdvanceDungeon or AutoMusketeer or Auto_Serpent_Bow then
                 if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
                     local Noclip = Instance.new("BodyVelocity")
                     Noclip.Name = "BodyClip"
@@ -1473,72 +1473,11 @@ local Event_Left = Tab.Tab_Event:addSection()
 
 local EventCandy = Event_Left:addMenu('#Main Events')
 
-local EventTimes = EventCandy:addLabel('')
-spawn(function()
-    while task.wait() do
-        local times = game.Workspace.Countdown.SurfaceGui.TextLabel.Text
-        EventTimes:Refresh('Event Countdown : '.. tostring(times))
-    end
-end)
 
-EventCandy:addToggle('Auto Claim Gift', AutoClaimGift, function()
-    AutoClaimGift = Value
-end)
-spawn(function()
-    while task.wait() do
-        if AutoClaimGift then
-            pcall(function()
-                for i,v in pairs(game.Workspace._WorldOrigin:GetChildren()) do
-                    if v.Name == 'Present' then
-                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Root.CFrame
-                        wait(.1)
-                        game:service('VirtualInputManager'):SendKeyEvent(true, "E", false, game)
-                        wait(.1)
-                        game:service('VirtualInputManager'):SendKeyEvent(false, "E", false, game)
-                    end
-                end
-            end)
-        end
-    end
-end)
-EventCandy:addToggle('Auto Store Gift', AutoStoreGift, function()
-    AutoStoreGift = Value
-end)
-spawn(function()
-    while task.wait() do
-        if AutoStoreGift then
-            pcall(function()
-                function EquipTool(Tool)
-                    pcall(function()
-                        game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack[Tool])
-                    end)
-                end
-                for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-                    if v:IsA('Tool') then
-                        if string.find(v.Name, 'Gift') then
-                            EquipTool(v.Name)
-                        end
-                    end
-                end
-                wait(.1)
-                for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
-                    if v:IsA('Tool') then
-                        if string.find(v.Name, 'Gift') then
-                            game.Players.LocalPlayer.Character:FindFirstChild(v.Name).ConsumeEvent:InvokeServer('Display')
-                            wait(.1)
-                            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StoreHolidayGift")
-                        end
-                    end
-                end
-            end)
-        end
-    end
-end)
+ -- HOME LEFT SECTION
 
-EventCandy:addButton('Teleport to Events', function()
-    Tween(CFrame.new(-1095.96472, 64.4006958, -14519.3809, 0.763202608, 7.23753928e-08, 0.646159291, -2.14145039e-08, 1, -8.671514e-08, -0.646159291, 5.23440384e-08, 0.763202608))
-end)
-
+EventCandy:addChangelog('[April, 26, 2025]')
+EventCandy:addChangelog('- Untuk sementara fitur ini dihilangkan')
 
 ----------------------------------------------------//----------------------------------------------------
 --//Events
@@ -6631,21 +6570,21 @@ end
 spawn(function()
     while task.wait() do
         if GetWeaponInventory("Tushita") == true then
-            TushitaSword:Refresh("Tushita Sword : Have âœ…")
+            TushitaSword:Refresh("Tushita Sword : Have 🍑…")
         elseif GetWeaponInventory("Tushita") == false then
-            TushitaSword:Refresh("Tushita Sword : Not Have âŒ")
+            TushitaSword:Refresh("Tushita Sword : Not Have 💸")
         end
 
         if GetWeaponInventory("Yama") == true then
-            YamaSword:Refresh("Yama Sword : Have âœ…")
+            YamaSword:Refresh("Yama Sword : Have 🔥…")
         elseif GetWeaponInventory("Yama") == false then
-            YamaSword:Refresh("Yama Sword : Not Have âŒ")
+            YamaSword:Refresh("Yama Sword : Not Have 🤓")
         end
         wait(300)
     end
 end)
 
-CDK_Quest_Puzzle:addLabel("Will Released Soon")
+CDK_Quest_Puzzle:addLabel("Will Released Soon😵‍💫 (dev malas)")
 
 ----------------------------------------------------//----------------------------------------------------
 --// Other Quest
