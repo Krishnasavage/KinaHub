@@ -1,22 +1,22 @@
-local Library = loadstring(game:HttpGet("https://pastebin.com/raw/4aeRjrEj"))() -- LIBRARY
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Krishnasavage/KinaHub/refs/heads/main/Toggle.lyq"))() -- LIBRARY
 
 local Window = Library:CreateWindow('KINA HUB') -- CREATE WINDOW
 
 local Tab = { -- CREATE TABS
-    Tab_1 = Window:addTab('#Home'),
-    Tab_Setting = Window:addTab('#Settings'),
-    Tab_Event = Window:addTab('#Events'),
-    Tab_2 = Window:addTab('#Main Farm'),
-    Tab_SubFarm = Window:addTab('#Subs Farm'),
-    Tab_3 = Window:addTab('#Quest'),
-    Tab_3_1 = Window:addTab('#Dragon Dojo'),
-    Tab_Sea = Window:addTab('#Sea Event'),
-    Tab_RaceV4 = Window:addTab('#Race V4'),
-    Tab_4 = Window:addTab('#Raids'),
-    Tab_Combat = Window:addTab('#PVP'),
-    Tab_5 = Window:addTab('#Teleport & Status'),
-    Tab_6 = Window:addTab('#Shop'),
-    Tab_7 = Window:addTab('#Misc')
+    Tab_1 = Window:addTab('Home'),
+    Tab_Setting = Window:addTab('Settings'),
+    Tab_Event = Window:addTab('Events'),
+    Tab_2 = Window:addTab('Main Farm'),
+    Tab_SubFarm = Window:addTab('Subs Farm'),
+    Tab_3 = Window:addTab('Quest'),
+    Tab_3_1 = Window:addTab('Dragon Dojo'),
+    Tab_Sea = Window:addTab('Sea Event'),
+    Tab_RaceV4 = Window:addTab('Race V4'),
+    Tab_4 = Window:addTab('Raids'),
+    Tab_Combat = Window:addTab('PVP'),
+    Tab_5 = Window:addTab('Teleport & Status'),
+    Tab_6 = Window:addTab('Shop'),
+    Tab_7 = Window:addTab('Misc')
     
 }
 
