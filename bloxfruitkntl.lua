@@ -1476,8 +1476,6 @@ local EventCandy = Event_Left:addMenu('#Main Events')
 
  -- HOME LEFT SECTION
 
-EventCandy:addChangelog('[April, 26, 2025]')
-EventCandy:addChangelog('- Untuk sementara fitur ini dihilangkan')
 
 ----------------------------------------------------//----------------------------------------------------
 --//Events
