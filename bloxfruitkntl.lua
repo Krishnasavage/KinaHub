@@ -37,6 +37,7 @@ Changelog:addChangelog('[April, 27, 2025]')
 Changelog:addChangelog('Add New Raid Boss (Tyrant) [Not Fully Working]')
 Changelog:addChangelog('Dev Makin Stress 🤧')
 Changelog:addChangelog('Max Level [2650]')
+Changelog:addChangelog('BringMob Tidak Otomatis Hidup \n BringMob Not Automatic On Again (still updating)')
 Changelog:addChangelog('')
 
 local Home_Right = Tab.Tab_1:addSection() -- HOME RIGHT SECTION
@@ -1852,7 +1853,7 @@ Main_Setting:addTextbox("Bring Mobs Distance (Default 250)", bringfrec, function
     bringfrec = Value
 end)
 
-local BringMobs = true
+local BringMobs = false
 Main_Setting:addToggle("Bring Mob", BringMobs, function(Value)
     BringMobs = Value
 end)
