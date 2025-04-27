@@ -1229,6 +1229,10 @@ function CheckBossQuest()
             BossMon = "rip_indra True Form [Lv. 5000] [Raid Boss]"
             NameBoss = 'rip_indra True Form'
             CFrameBoss = CFrame.new(-5415.3920898438, 505.74133300781, -2814.0166015625)
+			elseif SelectBoss == "Tyrant Of The Skies" then
+            BossMon = "Tyrant Of The Skies [Lv. 2600] [Raid Boss]"
+            NameBoss = 'Tyrant Of The Skies'
+            CFrameBoss = CFrame.new(0)
         end
     end
 end
@@ -3180,17 +3184,17 @@ local MoonCheck = IslandInfo:addLabel("")
 spawn(function()
     while wait() do
         if game:GetService("Lighting").Sky.MoonTextureId == "http://www.roblox.com/asset/?id=9709149431" then
-            MoonCheck:Refresh("Moon Status : ðŸŒ‘ 100%")
+            MoonCheck:Refresh("Moon Status : 🌘‘ 100%")
         elseif game:GetService("Lighting").Sky.MoonTextureId == "http://www.roblox.com/asset/?id=9709149052" then
-            MoonCheck:Refresh("Moon Status : ðŸŒ’ 75%")
+            MoonCheck:Refresh("Moon Status : 🌘’ 75%")
         elseif game:GetService("Lighting").Sky.MoonTextureId == "http://www.roblox.com/asset/?id=9709143733" then
-            MoonCheck:Refresh("Moon Status : ðŸŒ“ 50%")
+            MoonCheck:Refresh("Moon Status : 🌘“ 50%")
         elseif game:GetService("Lighting").Sky.MoonTextureId == "http://www.roblox.com/asset/?id=9709150401" then
-            MoonCheck:Refresh("Moon Status : ðŸŒ— 25%")
+            MoonCheck:Refresh("Moon Status : 🌘— 25%")
         elseif game:GetService("Lighting").Sky.MoonTextureId == "http://www.roblox.com/asset/?id=9709149680" then
-            MoonCheck:Refresh("Moon Status : ðŸŒ– 15%")
+            MoonCheck:Refresh("Moon Status : 🌘– 15%")
         else
-            MoonCheck:Refresh("Moon Status : ðŸŒš 0%")
+            MoonCheck:Refresh("Moon Status : 🌘 0%")
         end
     end
 end)
@@ -4846,7 +4850,7 @@ local Boss_Farm = Farm_Right:addMenu('#Boss Farm')
 local BossNameStorage = {
     "The Gorrila King", "Bobby", "The Saw", "Yeti", "Mob Leader", "Vice Admiral", "Saber Expert", "Warden", "Chief Warden", "Swan", "Magma Admiral", "Fishman Lord", "Wysper", "Thunder God", "Cyborg", "Ice Admiral", "Greybeard",
     "Diamond", "Jeremy", "Fajita", "Don Swan", "Smoke Admiral", "Awakened Ice Admiral", "Tide Keeper", "Darkbeard", "Cursed Captain", "Order",
-    "Stone", "Hydra Leader", "Kilo Admiral", "Captain Elephant", "Beautiful Pirate", "Cake Queen", "Longma", "Soul Reaper", "rip_indra True Form"
+    "Stone", "Hydra Leader", "Kilo Admiral", "Captain Elephant", "Beautiful Pirate", "Cake Queen", "Longma", "Soul Reaper", "rip_indra True Form", "Tyrant Of The Skies"
 }
 local BossList = {}
 for i,v in pairs(game.ReplicatedStorage:GetChildren()) do
@@ -8979,14 +8983,14 @@ spawn(function()
                 StoredFruited("Smoke-Smoke", "Smoke Fruit")
                 StoredFruited("Spike-Spike", "Spike Fruit")
                 StoredFruited("Flame-Flame", "Flame Fruit")
-                StoredFruited("Falcon-Falcon", "Falcon Fruit")
+                StoredFruited("Eagle-Eagle", "Eagle Fruit")
                 StoredFruited("Ice-Ice", "Ice Fruit")
                 StoredFruited("Sand-Sand", "Sand Fruit")
                 StoredFruited("Dark-Dark", "Dark Fruit")
                 StoredFruited("Diamond-Diamond", "Diamond Fruit")
                 StoredFruited("Light-Light", "Light Fruit")
                 StoredFruited("Rubber-Rubber", "Rubber Fruit")
-                StoredFruited("Barrier-Barrier", "Barrier Fruit")
+                StoredFruited("Creation-Creation", "Creation Fruit")
                 StoredFruited("Ghost-Ghost", "Ghost Fruit")
                 StoredFruited("Magma-Magma", "Magma Fruit")
                 StoredFruited("Quake-Quake", "Quake Fruit")
