@@ -32,6 +32,13 @@ Changelog:addChangelog('= balancing auto find fruit (not risky)')
 Changelog:addChangelog('- Kill Aura Raid')
 Changelog:addChangelog('+ fixing my brain')
 Changelog:addChangelog('')
+
+Changelog:addChangelog('[April, 27, 2025]')
+Changelog:addChangelog('Add New Raid Boss (Tyrant) [Not Fully Working]')
+Changelog:addChangelog('Dev Makin Stress 🤧')
+Changelog:addChangelog('Max Level [2650]')
+Changelog:addChangelog('')
+
 local Home_Right = Tab.Tab_1:addSection() -- HOME RIGHT SECTION
 local Main_Home = Home_Right:addMenu("#Home")
 
