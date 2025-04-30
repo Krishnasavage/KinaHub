@@ -40,6 +40,11 @@ Changelog:addChangelog('Max Level [2650]')
 Changelog:addChangelog('BringMob Tidak Otomatis Hidup \n BringMob Not Automatic On Again (still updating)')
 Changelog:addChangelog('')
 
+Changelog:addChangelog('[April, 30, 2025]')
+Changelog:addChangelog('🔥 Improving Bring Mob')
+Changelog:addChangelog('- Now BringMob Radius Is Useles [Maybe Got Remove, But Im To Lazy 💤]')
+Changelog:addChangelog('')
+
 local Home_Right = Tab.Tab_1:addSection() -- HOME RIGHT SECTION
 local Main_Home = Home_Right:addMenu("#Home")
 
@@ -1827,20 +1832,24 @@ end)]]
 --// BRING MOBS
 function BringMonster(TargetName, TargetCFrame)
     local sethiddenproperty = sethiddenproperty or (function(...) return ... end)
-    for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+    for i, v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
         if v.Name == TargetName then
             if v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
-                if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < tonumber(bringfrec) then
-                    v.HumanoidRootPart.CFrame = TargetCFrame
-                    v.HumanoidRootPart.CanCollide = false
-                    v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
-                    v.HumanoidRootPart.Transparency = 1
-                    v.Humanoid:ChangeState(11)
-                    v.Humanoid:ChangeState(14)
-                    if v.Humanoid:FindFirstChild("Animator") then
-                        v.Humanoid.Animator:Destroy()
-                    end
-                    --sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
+                -- Move the humanoid root part to the target CFrame
+                v.HumanoidRootPart.CFrame = TargetCFrame
+                
+                -- Disable collision and modify properties
+                v.HumanoidRootPart.CanCollide = false
+                v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
+                v.HumanoidRootPart.Transparency = 1
+                
+                -- Change humanoid state to prevent movement
+                v.Humanoid:ChangeState(11) -- Standing
+                v.Humanoid:ChangeState(14) -- Sitting
+                
+                -- Remove the animator if it exists
+                if v.Humanoid:FindFirstChild("Animator") then
+                    v.Humanoid.Animator:Destroy()
                 end
             end
         end
@@ -1848,7 +1857,8 @@ function BringMonster(TargetName, TargetCFrame)
     pcall(sethiddenproperty, game.Players.LocalPlayer, "SimulationRadius", math.huge)
 end
 
-bringfrec = 250
+bringfrec = 250 -- This variable is no longer necessary unless you plan to use it for distance-based logic later
+
 Main_Setting:addTextbox("Bring Mobs Distance (Default 250)", bringfrec, function(Value)
     bringfrec = Value
 end)
