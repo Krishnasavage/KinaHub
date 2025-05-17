@@ -1,12 +1,4 @@
-eKeypoint.new(1, _G.Dark)
-			});
-			UIGradient.Parent = Line;
-		end;
-		return main;
-	end;
-	return uitab;
-end;
-return Update;if (game:GetService("CoreGui")):FindFirstChild("KinaHub") and (game:GetService("CoreGui")):FindFirstChild("ScreenGui") then
+if (game:GetService("CoreGui")):FindFirstChild("KinaHub") and (game:GetService("CoreGui")):FindFirstChild("ScreenGui") then
 	(game:GetService("CoreGui")).KinaHub:Destroy();
 	(game:GetService("CoreGui")).ScreenGui:Destroy();
 end;
