@@ -1,4 +1,12 @@
-if (game:GetService("CoreGui")):FindFirstChild("KinaHub") and (game:GetService("CoreGui")):FindFirstChild("ScreenGui") then
+eKeypoint.new(1, _G.Dark)
+			});
+			UIGradient.Parent = Line;
+		end;
+		return main;
+	end;
+	return uitab;
+end;
+return Update;if (game:GetService("CoreGui")):FindFirstChild("KinaHub") and (game:GetService("CoreGui")):FindFirstChild("ScreenGui") then
 	(game:GetService("CoreGui")).KinaHub:Destroy();
 	(game:GetService("CoreGui")).ScreenGui:Destroy();
 end;
@@ -127,7 +135,7 @@ function Update:Notify(desc)
 	Image.BackgroundTransparency = 1;
 	Image.Position = UDim2.new(0, 8, 0, 8);
 	Image.Size = UDim2.new(0, 45, 0, 45);
-	Image.Image = "rbxassetid://";
+	Image.Image = "rbxassetid://13940080072";
 	Title.Parent = Frame;
 	Title.BackgroundColor3 = _G.Primary;
 	Title.BackgroundTransparency = 1;
@@ -885,7 +893,7 @@ function Update:Window(Config)
 			ImageLabel.AnchorPoint = Vector2.new(0.5, 0.5);
 			ImageLabel.Position = UDim2.new(0.5, 0, 0.5, 0);
 			ImageLabel.Size = UDim2.new(0, 15, 0, 15);
-			ImageLabel.Image = "rbxassetid://10734898355";
+			ImageLabel.Image = "rbxassetid://";
 			ImageLabel.ImageTransparency = 0;
 			ImageLabel.ImageColor3 = Color3.fromRGB(255, 255, 255);
 			CreateRounded(TextButton, 4);
