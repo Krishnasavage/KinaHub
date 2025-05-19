@@ -200,7 +200,7 @@ logo.Size = UDim2.fromOffset(320, 320)
 logo.AnchorPoint = Vector2.new(0.5, 0.5)
 logo.Position = UDim2.new(0.5, 0, 0.5, 0)
 logo.BackgroundTransparency = 1
-logo.Image = "rbxassetid://"
+logo.Image = "rbxassetid://117726409568334"
 logo.ScaleType = Enum.ScaleType.Fit
 logo.Parent = bgFrame
 
