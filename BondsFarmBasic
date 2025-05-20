@@ -200,7 +200,7 @@ logo.Size = UDim2.fromOffset(320, 320)
 logo.AnchorPoint = Vector2.new(0.5, 0.5)
 logo.Position = UDim2.new(0.5, 0, 0.5, 0)
 logo.BackgroundTransparency = 1
-logo.Image = "rbxassetid://117726409568334"
+logo.Image = "rbxassetid://"
 logo.ScaleType = Enum.ScaleType.Fit
 logo.Parent = bgFrame
 
@@ -218,9 +218,9 @@ footer.Parent = bgFrame
 -- Time
 local timerLabel = Instance.new("TextLabel")
 timerLabel.Size = UDim2.new(0, 200, 0, 40)
-timerLabel.Position = UDim2.new(0.5, -100, 0.5, 180) -- Dưới logo
-timerLabel.BackgroundTransparency = 1 -- Không có khung
-timerLabel.TextColor3 = Color3.fromRGB(255, 255, 255) -- Trắng khi chạy
+timerLabel.Position = UDim2.new(0.5, -80, 0.5, 180) 
+timerLabel.BackgroundTransparency = 1 
+timerLabel.TextColor3 = Color3.fromRGB(255, 255, 255) 
 timerLabel.Font = Enum.Font.GothamBold
 timerLabel.TextSize = 30
 timerLabel.Text = "Time: 00:00"
