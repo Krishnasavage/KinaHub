@@ -218,7 +218,7 @@ footer.Parent = bgFrame
 -- Time
 local timerLabel = Instance.new("TextLabel")
 timerLabel.Size = UDim2.new(0, 200, 0, 40)
-timerLabel.Position = UDim2.new(0.5, -80, 0.5, 180) 
+timerLabel.Position = UDim2.new(0.5, 2, 0.5, 180) 
 timerLabel.BackgroundTransparency = 1 
 timerLabel.TextColor3 = Color3.fromRGB(255, 255, 255) 
 timerLabel.Font = Enum.Font.GothamBold
