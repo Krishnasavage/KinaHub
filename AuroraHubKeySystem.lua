@@ -20,7 +20,7 @@ local Config = {
 	YoutubeURL = "https://www.youtube.com/channel/UCAlXXV1Hbvf7WbfXARuVtiQ",
 
 	-- [5] File System
-	KeyFileName = "SingularityKey.txt", -- Nama file penyimpanan kunci untuk auto-login
+	KeyFileName = "AuroraKey.txt", -- Nama file penyimpanan kunci untuk auto-login
 
 	-- [6] GUI Management
 	OldGuiName = "", -- Nama GUI lama yang akan dihancurkan jika sudah terbuka
