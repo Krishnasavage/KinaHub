@@ -4,7 +4,7 @@ local Config = {
 	PlatoSecret = "cfbff00d-5452-4524-b846-7a4d8b06e41e", -- Kunci Rahasia PlatoBoost Anda
 
 	-- [2] Anti-Bypass / Global Secret Variable
-	Secret = "mrPENIS", -- Membuat skrip UTAMA hanya bisa berjalan melalui skrip kunci ini
+	Secret = "mrPENIS1", -- Membuat skrip UTAMA hanya bisa berjalan melalui skrip kunci ini
 
 	-- [3] Scripts & Links
 	MainScriptURL = "https://raw.githubusercontent.com/Krishnasavage/KinaHub/refs/heads/main/Fling.lua", -- URL mentah (raw) skrip utama Anda
