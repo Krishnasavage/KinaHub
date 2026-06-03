@@ -4,20 +4,20 @@ local Config = {
 	PlatoSecret = "cfbff00d-5452-4524-b846-7a4d8b06e41e", -- Kunci Rahasia PlatoBoost Anda
 
 	-- [2] Anti-Bypass / Global Secret Variable
-	Secret = "mrPENIS2", -- Membuat skrip UTAMA hanya bisa berjalan melalui skrip kunci ini
+	Secret = "mrPENIS", -- Membuat skrip UTAMA hanya bisa berjalan melalui skrip kunci ini
 
 	-- [3] Scripts & Links
 	MainScriptURL = "https://raw.githubusercontent.com/Krishnasavage/KinaHub/refs/heads/main/Fling.lua", -- URL mentah (raw) skrip utama Anda
 
 	-- [4] Social Media Settings
 	ShowDiscord = false,
-	DiscordURL = "https://discord.gg/kT55J724BK",
+	DiscordURL = "https://discord.gg/Xd5d7QGQSp",
 
 	ShowInstagram = false,
-	InstagramURL = "https://www.instagram.com/oyb0i/",
+	InstagramURL = "https://www.instagram.com/krizzishere/",
 
 	ShowYoutube = false,
-	YoutubeURL = "https://www.youtube.com/channel/UCAlXXV1Hbvf7WbfXARuVtiQ",
+	YoutubeURL = "https://youtube.com/@aradep?si=0EqI50AzDJSDkmj3",
 
 	-- [5] File System
 	KeyFileName = "AuroraKey.txt", -- Nama file penyimpanan kunci untuk auto-login
