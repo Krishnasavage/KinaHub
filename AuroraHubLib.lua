@@ -494,5 +494,260 @@ function AuroraUI:Notify(options)
 
     return notif
 end
+-- =====================
+-- TAB SYSTEM
+-- =====================
+function AuroraUI:CreateTabs(tabNames)
+    --[[
+        tabNames = {"Tab1", "Tab2", "Tab3"}
+        Returns: tabs object, panggil tabs:Select("Tab1") untuk switch
+    ]]
 
+    local tabs = {}
+    local pages = {}
+    local activeTab = nil
+
+    -- Sembunyiin content default, kita pakai pages sendiri
+    self.Content.Visible = false
+
+    -- Tab bar
+    local tabBar = Instance.new("Frame")
+    tabBar.Name = "TabBar"
+    tabBar.Size = UDim2.new(1, -16, 0, 36)
+    tabBar.Position = UDim2.new(0, 8, 0, 54)
+    tabBar.BackgroundColor3 = Colors.Card
+    tabBar.BorderSizePixel = 0
+    tabBar.Parent = self.Window
+    AddCorner(tabBar, 8)
+
+    local tabLayout = Instance.new("UIListLayout")
+    tabLayout.FillDirection = Enum.FillDirection.Horizontal
+    tabLayout.SortOrder = Enum.SortOrder.LayoutOrder
+    tabLayout.Padding = UDim.new(0, 4)
+    tabLayout.Parent = tabBar
+
+    local tabPad = Instance.new("UIPadding")
+    tabPad.PaddingLeft = UDim.new(0, 4)
+    tabPad.PaddingRight = UDim.new(0, 4)
+    tabPad.PaddingTop = UDim.new(0, 4)
+    tabPad.PaddingBottom = UDim.new(0, 4)
+    tabPad.Parent = tabBar
+
+    -- Page container
+    local pageHolder = Instance.new("Frame")
+    pageHolder.Name = "PageHolder"
+    pageHolder.Size = UDim2.new(1, -16, 1, -106)
+    pageHolder.Position = UDim2.new(0, 8, 0, 98)
+    pageHolder.BackgroundTransparency = 1
+    pageHolder.Parent = self.Window
+
+    -- Bikin setiap tab + page
+    for i, name in ipairs(tabNames) do
+
+        -- Tab button
+        local tabBtn = Instance.new("TextButton")
+        tabBtn.Name = name
+        tabBtn.Size = UDim2.new(1/#tabNames, -4, 1, 0)
+        tabBtn.BackgroundColor3 = Colors.Surface
+        tabBtn.BorderSizePixel = 0
+        tabBtn.Text = name
+        tabBtn.TextColor3 = Colors.TextMuted
+        tabBtn.Font = Enum.Font.GothamBold
+        tabBtn.TextSize = 12
+        tabBtn.LayoutOrder = i
+        tabBtn.Parent = tabBar
+        AddCorner(tabBtn, 6)
+
+        -- Page (ScrollingFrame per tab)
+        local page = Instance.new("ScrollingFrame")
+        page.Name = name .. "_Page"
+        page.Size = UDim2.new(1, 0, 1, 0)
+        page.BackgroundTransparency = 1
+        page.BorderSizePixel = 0
+        page.ScrollBarThickness = 3
+        page.ScrollBarImageColor3 = Colors.Accent1
+        page.CanvasSize = UDim2.new(0, 0, 0, 0)
+        page.AutomaticCanvasSize = Enum.AutomaticSize.Y
+        page.Visible = false
+        page.Parent = pageHolder
+
+        local pageLayout = Instance.new("UIListLayout")
+        pageLayout.Padding = UDim.new(0, 8)
+        pageLayout.Parent = page
+
+        local pagePad = Instance.new("UIPadding")
+        pagePad.PaddingLeft = UDim.new(0, 4)
+        pagePad.PaddingRight = UDim.new(0, 4)
+        pagePad.PaddingTop = UDim.new(0, 6)
+        pagePad.Parent = page
+
+        tabs[name]  = tabBtn
+        pages[name] = page
+
+        -- Click handler
+        tabBtn.MouseButton1Click:Connect(function()
+            -- Nonaktifkan semua tab
+            for n, btn in pairs(tabs) do
+                Tween(btn, {BackgroundColor3 = Colors.Surface}, 0.2)
+                btn.TextColor3 = Colors.TextMuted
+                pages[n].Visible = false
+            end
+            -- Aktifkan tab ini
+            Tween(tabBtn, {BackgroundColor3 = Colors.Accent2}, 0.2)
+            tabBtn.TextColor3 = Colors.Text
+            page.Visible = true
+            activeTab = name
+        end)
+    end
+
+    -- Objek TabManager yang dikembaliin
+    local manager = {}
+
+    -- Pilih tab aktif
+    function manager:Select(name)
+        if tabs[name] then
+            tabs[name].MouseButton1Click:Fire()
+        end
+    end
+
+    -- Tambahin elemen ke tab tertentu (Section, Button, Toggle, Label)
+    -- Tapi targetnya page bukan self.Content
+    function manager:Button(tabName, text, callback)
+        local page = pages[tabName]
+        if not page then return end
+
+        local btn = Instance.new("TextButton")
+        btn.Size = UDim2.new(1, 0, 0, 38)
+        btn.BackgroundColor3 = Colors.Card
+        btn.BorderSizePixel = 0
+        btn.Text = text
+        btn.TextColor3 = Colors.Text
+        btn.Font = Enum.Font.Gotham
+        btn.TextSize = 13
+        btn.Parent = page
+        AddCorner(btn, 8)
+        AddStroke(btn, Colors.Accent1, 1)
+
+        btn.MouseEnter:Connect(function()
+            Tween(btn, {BackgroundColor3 = Color3.fromRGB(35, 40, 75)}, 0.2)
+        end)
+        btn.MouseLeave:Connect(function()
+            Tween(btn, {BackgroundColor3 = Colors.Card}, 0.2)
+        end)
+        btn.MouseButton1Click:Connect(function()
+            Tween(btn, {BackgroundColor3 = Colors.Accent2}, 0.1)
+            task.delay(0.1, function()
+                Tween(btn, {BackgroundColor3 = Colors.Card}, 0.2)
+            end)
+            if callback then callback() end
+        end)
+        return btn
+    end
+
+    function manager:Toggle(tabName, text, default, callback)
+        local page = pages[tabName]
+        if not page then return end
+        local state = default or false
+
+        local container = Instance.new("Frame")
+        container.Size = UDim2.new(1, 0, 0, 38)
+        container.BackgroundColor3 = Colors.Card
+        container.BorderSizePixel = 0
+        container.Parent = page
+        AddCorner(container, 8)
+        AddStroke(container, Colors.Accent2, 1)
+
+        local label = Instance.new("TextLabel")
+        label.Text = text
+        label.Size = UDim2.new(1, -60, 1, 0)
+        label.Position = UDim2.new(0, 12, 0, 0)
+        label.BackgroundTransparency = 1
+        label.TextColor3 = Colors.Text
+        label.Font = Enum.Font.Gotham
+        label.TextSize = 13
+        label.TextXAlignment = Enum.TextXAlignment.Left
+        label.Parent = container
+
+        local track = Instance.new("Frame")
+        track.Size = UDim2.new(0, 40, 0, 20)
+        track.Position = UDim2.new(1, -50, 0.5, -10)
+        track.BackgroundColor3 = state and Colors.Accent3 or Color3.fromRGB(50,50,70)
+        track.BorderSizePixel = 0
+        track.Parent = container
+        AddCorner(track, 10)
+
+        local thumb = Instance.new("Frame")
+        thumb.Size = UDim2.new(0, 16, 0, 16)
+        thumb.Position = state and UDim2.new(1,-18,0.5,-8) or UDim2.new(0,2,0.5,-8)
+        thumb.BackgroundColor3 = Colors.Text
+        thumb.BorderSizePixel = 0
+        thumb.Parent = track
+        AddCorner(thumb, 8)
+
+        local click = Instance.new("TextButton")
+        click.Size = UDim2.new(1,0,1,0)
+        click.BackgroundTransparency = 1
+        click.Text = ""
+        click.Parent = container
+        click.MouseButton1Click:Connect(function()
+            state = not state
+            Tween(track, {BackgroundColor3 = state and Colors.Accent3 or Color3.fromRGB(50,50,70)}, 0.2)
+            Tween(thumb, {Position = state and UDim2.new(1,-18,0.5,-8) or UDim2.new(0,2,0.5,-8)}, 0.2)
+            if callback then callback(state) end
+        end)
+        return container
+    end
+
+    function manager:Section(tabName, text)
+        local page = pages[tabName]
+        if not page then return end
+
+        local section = Instance.new("Frame")
+        section.Size = UDim2.new(1, 0, 0, 28)
+        section.BackgroundTransparency = 1
+        section.Parent = page
+
+        local line = Instance.new("Frame")
+        line.Size = UDim2.new(1,0,0,1)
+        line.Position = UDim2.new(0,0,0.5,0)
+        line.BackgroundColor3 = Colors.Accent2
+        line.BackgroundTransparency = 0.6
+        line.BorderSizePixel = 0
+        line.Parent = section
+
+        local lbl = Instance.new("TextLabel")
+        lbl.Text = " " .. text .. " "
+        lbl.Size = UDim2.new(0,0,1,0)
+        lbl.AutomaticSize = Enum.AutomaticSize.X
+        lbl.Position = UDim2.new(0,10,0,0)
+        lbl.BackgroundColor3 = Colors.Background
+        lbl.TextColor3 = Colors.Accent3
+        lbl.Font = Enum.Font.GothamBold
+        lbl.TextSize = 11
+        lbl.Parent = section
+    end
+
+    function manager:Label(tabName, text)
+        local page = pages[tabName]
+        if not page then return end
+
+        local lbl = Instance.new("TextLabel")
+        lbl.Size = UDim2.new(1,0,0,30)
+        lbl.BackgroundTransparency = 1
+        lbl.Text = text
+        lbl.TextColor3 = Colors.TextMuted
+        lbl.Font = Enum.Font.Gotham
+        lbl.TextSize = 12
+        lbl.TextXAlignment = Enum.TextXAlignment.Left
+        lbl.TextWrapped = true
+        lbl.AutomaticSize = Enum.AutomaticSize.Y
+        lbl.Parent = page
+        return lbl
+    end
+
+    -- Auto select tab pertama
+    manager:Select(tabNames[1])
+
+    return manager
+end
 return AuroraUI
