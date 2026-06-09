@@ -14,7 +14,7 @@ local lEncode, lDecode, lDigest = a3, aw, Z
 --! CORE FUNCTIONS
 -------------------------------------------------------------------------------
 
-local API_URL = "https://mastiff-irk-suitcase.ngrok-free.dev/api"
+local API_URL = "http://167.71.87.255:8080/api"
 local TweenService = game:GetService("TweenService")
 local RunService   = game:GetService("RunService")
 local Players = game:GetService("Players")
